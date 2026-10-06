@@ -103,7 +103,6 @@
   .tagbar { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin: -4px 0 14px; }
   /* podkategorie: přilepená lišta */
   .tabs.stick { position: sticky; top: 0; z-index: 5; background: var(--bg); padding: 10px 0; margin: 0 0 6px; box-shadow: 0 8px 12px -12px rgba(0,0,0,.25); }
-  .tabs button.cur { border-color: var(--brand); background: #e8f8f9; }
   h2 { scroll-margin-top: 70px; }
   /* spodní lišta výběru */
   .pickbar { position: fixed; left: 50%; bottom: 16px; translate: -50% 0; z-index: 8; display: none; align-items: center; gap: 10px; padding: 8px 8px 8px 16px; background: var(--ink); color: #fff; border-radius: 14px; box-shadow: 0 12px 30px rgba(0,0,0,.3); max-width: calc(100vw - 24px); }
@@ -164,6 +163,7 @@ let S = { categories: [], bank: {} }
 let cur = null, view = 'hledat'              // hledat | banka | tag | vyber
 let sub = 0, results = [], page = 1, ori = 'landscape', custom = '', src = 'pexels'
 let tagSel = []                              // filtr tagů
+let subSel = new Set()                       // statická verze: vybrané podkategorie (prázdné = vše)
 let shown = []                               // fotky v mřížce: { p, cat, sub } (detail + šipky)
 let dlgIdx = -1
 
@@ -197,7 +197,7 @@ function renderSide() {
   }).join('')
   $('#nav').querySelectorAll('button').forEach((b) => b.onclick = () => {
     cur = S.categories.find((c) => c.slug === b.dataset.s); sub = 0; results = []; page = 1; custom = ''
-    view = count(cur.slug) ? 'banka' : 'hledat'
+    subSel.clear(); view = count(cur.slug) ? 'banka' : 'hledat'
     renderSide(); render(); closeMenu(); scrollTo(0, 0); if (view === 'hledat') search()
   })
   if (f) { const catHit = $('#nav button'), tagHit = $('#tags .chip'); if (!catHit && tagHit) showPane('tag') }
@@ -240,12 +240,12 @@ function render() {
   } else {
     const n = count(cur.slug)
     const subN = (name) => (S.bank[cur.slug]?.[name] || []).filter(hasTags).length
-    const subs = cur.sub.filter((s) => !STATIC || subN(s[0])).map((s) => { const i = cur.sub.indexOf(s); return `<button data-i="${i}" class="${view === 'hledat' && i === sub && !custom ? 'on' : ''}">${esc(s[0])}<span>${subN(s[0])}</span></button>` }).join('')
+    const subs = cur.sub.filter((s) => !STATIC || subN(s[0])).map((s) => { const i = cur.sub.indexOf(s); return `<button data-i="${i}" class="${(view === 'hledat' && i === sub && !custom) || (STATIC && subSel.has(s[0])) ? 'on' : ''}">${esc(s[0])}<span>${subN(s[0])}</span></button>` }).join('')
     html = `<div class="top"><h1>${esc(cur.name)}</h1><div class="tools">
       ${STATIC ? '' : `<select id="src" class="btn" title="Zdroj pro hledání">${Object.entries(SRC).map(([k, v]) => `<option value="${k}" ${k === src ? 'selected' : ''}>${v}</option>`).join('')}</select>
       <button class="btn" id="fillCat" title="Doplní 8 fotek do každé podkategorie (Pexels → Pixabay → Openverse)">Doplnit kategorii</button>`}
       ${dlBtn()}</div></div>
-      <div class="tabs ${STATIC ? 'stick' : ''}"><button id="vBank" class="${view === 'banka' ? 'on' : ''}">${STATIC ? 'Vše' : 'Ve fotobance'}<span>${tagSel.length ? allBank().filter((x) => x.cat.slug === cur.slug && hasTags(x.p)).length : n}</span></button>${subs}</div>`
+      <div class="tabs ${STATIC ? 'stick' : ''}"><button id="vBank" class="${view === 'banka' && !subSel.size ? 'on' : ''}">${STATIC ? 'Vše' : 'Ve fotobance'}<span>${tagSel.length ? allBank().filter((x) => x.cat.slug === cur.slug && hasTags(x.p)).length : n}</span></button>${subs}</div>`
     if (view === 'hledat') {
       const q = custom || cur.sub[sub][1]
       shown = results.map((p) => ({ p, cat: cur, sub: cur.sub[sub][0] }))
@@ -254,7 +254,7 @@ function render() {
         : `<div class="empty" id="grid">Načítám z ${SRC[src]}…</div>`
     } else {
       html += tagBar()
-      const entries = cur.sub.map((s) => [s[0], (S.bank[cur.slug]?.[s[0]] || []).filter(hasTags)]).filter(([, l]) => l.length)
+      const entries = cur.sub.filter((s) => !subSel.size || subSel.has(s[0])).map((s) => [s[0], (S.bank[cur.slug]?.[s[0]] || []).filter(hasTags)]).filter(([, l]) => l.length)
       let i = 0
       html += entries.length ? entries.map(([s, l]) => { const items = l.map((p) => { shown.push({ p, cat: cur, sub: s }); return card(p, cur, s, i++) }); return `<h2>${esc(s)} <small>${l.length}</small></h2><div class="grid">${items.join('')}</div>` }).join('')
         : `<div class="empty">${tagSel.length ? 'V této kategorii žádná fotka nemá všechny vybrané tagy.' : 'V této kategorii zatím nic není. Vyber podkategorii nahoře a přidej fotky, nebo klikni na „Doplnit kategorii“.'}</div>`
@@ -264,10 +264,10 @@ function render() {
   $('#mTitle').textContent = view === 'vyber' ? 'Můj výběr' : cur.name
   $('#main').querySelectorAll('[data-un]').forEach((b) => b.onclick = () => toggleTag(b.dataset.un))
   if ($('#clearTags2')) $('#clearTags2').onclick = () => { tagSel = []; renderSide(); render() }
-  bindGrid(); spy(); renderPickbar()
+  bindGrid(); renderPickbar()
   if ($('#ori')) $('#ori').value = ori
-  $('#main').querySelectorAll('.tabs button[data-i]').forEach((b) => b.onclick = STATIC ? () => { const h = [...$('#main').querySelectorAll('h2')].find((x) => x.firstChild.textContent.trim() === cur.sub[+b.dataset.i][0]); if (h) h.scrollIntoView({ behavior: 'smooth' }) } : () => { sub = +b.dataset.i; custom = ''; view = 'hledat'; results = []; page = 1; render(); search() })
-  if ($('#vBank')) $('#vBank').onclick = () => { view = 'banka'; render() }
+  $('#main').querySelectorAll('.tabs button[data-i]').forEach((b) => b.onclick = STATIC ? () => { const n = cur.sub[+b.dataset.i][0]; subSel.has(n) ? subSel.delete(n) : subSel.add(n); render() } : () => { sub = +b.dataset.i; custom = ''; view = 'hledat'; results = []; page = 1; render(); search() })
+  if ($('#vBank')) $('#vBank').onclick = () => { view = 'banka'; subSel.clear(); render() }
   if ($('#clearTags')) $('#clearTags').onclick = () => { tagSel = []; view = 'banka'; renderSide(); render() }
   if ($('#src')) $('#src').onchange = (e) => { src = e.target.value; results = []; page = 1; if (view === 'hledat') { render(); search() } }
   if ($('#fillCat')) $('#fillCat').onclick = (e) => fill(e.target, cur.slug)
@@ -320,14 +320,6 @@ async function downloadZip() {
     toast(`Staženo ${done - failed} fotek${failed ? `, ${failed} se nepodařilo` : ''}`)
   } catch (e) { toast(e.message || 'Stažení selhalo') }
   zipping = false; renderPickbar()
-}
-// zvýraznění aktuální podkategorie v přilepené liště
-let spyIO
-function spy() {
-  spyIO?.disconnect(); const tabs = [...$('#main').querySelectorAll('.tabs.stick button[data-i]')]; if (!tabs.length) return
-  spyIO = new IntersectionObserver((es) => es.forEach((e) => { if (!e.isIntersecting) return
-    const name = e.target.firstChild.textContent.trim(); tabs.forEach((b) => { const on = cur.sub[+b.dataset.i][0] === name; b.classList.toggle('cur', on); if (on) b.scrollIntoView({ block: 'nearest', inline: 'nearest' }) }) }), { rootMargin: '-80px 0px -70% 0px' })
-  $('#main').querySelectorAll('h2').forEach((h) => spyIO.observe(h))
 }
 function exportCsv() {
   const abs = (u) => new URL(u, location.href).href
