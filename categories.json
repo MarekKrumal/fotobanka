@@ -1,5 +1,129 @@
 [
  {
+  "slug": "wellness",
+  "name": "Wellness, spa a masáže",
+  "sub": [
+   [
+    "Sauna",
+    "sauna wood"
+   ],
+   [
+    "Vířivka",
+    "hot tub jacuzzi"
+   ],
+   [
+    "Spa",
+    "spa wellness relaxation"
+   ],
+   [
+    "Pára",
+    "steam bath spa"
+   ],
+   [
+    "Masáže",
+    "massage spa relaxation"
+   ],
+   [
+    "Masáž lávovými kameny",
+    "hot stones spa back"
+   ],
+   [
+    "Masáž pro páry",
+    "couple massage spa"
+   ],
+   [
+    "Kosmetické ošetření",
+    "facial treatment spa"
+   ],
+   [
+    "Relax zóna",
+    "spa relaxation lounge"
+   ],
+   [
+    "Termální lázně",
+    "thermal bath pool"
+   ],
+   [
+    "Wellness bazén",
+    "spa swimming pool indoor"
+   ],
+   [
+    "Aromaterapie",
+    "aromatherapy candles oil"
+   ],
+   [
+    "Ledová koupel",
+    "ice bath cold plunge"
+   ],
+   [
+    "Luxusní spa",
+    "luxury spa hotel"
+   ]
+  ]
+ },
+ {
+  "slug": "masaze",
+  "name": "Masáže",
+  "sub": [
+   [
+    "Klasická masáž",
+    "massage therapy"
+   ],
+   [
+    "Lávové kameny",
+    "hot stone massage"
+   ],
+   [
+    "Masáž obličeje",
+    "face massage spa"
+   ],
+   [
+    "Masážní salon",
+    "massage room candles"
+   ]
+  ]
+ },
+ {
+  "slug": "fitness-joga",
+  "name": "Fitness, cvičení a jóga",
+  "sub": [
+   [
+    "Jóga",
+    "yoga class studio"
+   ],
+   [
+    "Skupinové lekce",
+    "group fitness class"
+   ],
+   [
+    "Posilovna",
+    "gym workout"
+   ],
+   [
+    "Pilates",
+    "pilates studio"
+   ],
+   [
+    "Spinning",
+    "indoor cycling class"
+   ]
+  ]
+ },
+ {
+  "slug": "solarium",
+  "name": "Solária",
+  "sub": [
+   [
+    "Solárium",
+    "tanning salon"
+   ],
+   [
+    "Opálená pokožka",
+    "tanned skin woman spa"
+   ]
+  ]
+ },
+ {
   "slug": "volny-cas",
   "name": "Volný čas (obecné)",
   "sub": [
@@ -192,32 +316,6 @@
   ]
  },
  {
-  "slug": "fitness-joga",
-  "name": "Fitness, cvičení a jóga",
-  "sub": [
-   [
-    "Jóga",
-    "yoga class studio"
-   ],
-   [
-    "Skupinové lekce",
-    "group fitness class"
-   ],
-   [
-    "Posilovna",
-    "gym workout"
-   ],
-   [
-    "Pilates",
-    "pilates studio"
-   ],
-   [
-    "Spinning",
-    "indoor cycling class"
-   ]
-  ]
- },
- {
   "slug": "hrady-jeskyne",
   "name": "Hrady, zámky a jeskyně",
   "sub": [
@@ -316,28 +414,6 @@
    [
     "Neon",
     "neon arcade game room"
-   ]
-  ]
- },
- {
-  "slug": "masaze",
-  "name": "Masáže",
-  "sub": [
-   [
-    "Klasická masáž",
-    "massage therapy"
-   ],
-   [
-    "Lávové kameny",
-    "hot stone massage"
-   ],
-   [
-    "Masáž obličeje",
-    "face massage spa"
-   ],
-   [
-    "Masážní salon",
-    "massage room candles"
    ]
   ]
  },
@@ -498,20 +574,6 @@
   ]
  },
  {
-  "slug": "solarium",
-  "name": "Solária",
-  "sub": [
-   [
-    "Solárium",
-    "tanning salon"
-   ],
-   [
-    "Opálená pokožka",
-    "tanned skin woman spa"
-   ]
-  ]
- },
- {
   "slug": "solna-jeskyne",
   "name": "Solné jeskyně",
   "sub": [
@@ -624,68 +686,6 @@
    [
     "Golf",
     "golf course"
-   ]
-  ]
- },
- {
-  "slug": "wellness",
-  "name": "Wellness, spa a masáže",
-  "sub": [
-   [
-    "Sauna",
-    "sauna wood"
-   ],
-   [
-    "Vířivka",
-    "hot tub jacuzzi"
-   ],
-   [
-    "Spa",
-    "spa wellness relaxation"
-   ],
-   [
-    "Pára",
-    "steam bath spa"
-   ],
-   [
-    "Masáže",
-    "massage spa relaxation"
-   ],
-   [
-    "Masáž lávovými kameny",
-    "hot stones spa back"
-   ],
-   [
-    "Masáž pro páry",
-    "couple massage spa"
-   ],
-   [
-    "Kosmetické ošetření",
-    "facial treatment spa"
-   ],
-   [
-    "Relax zóna",
-    "spa relaxation lounge"
-   ],
-   [
-    "Termální lázně",
-    "thermal bath pool"
-   ],
-   [
-    "Wellness bazén",
-    "spa swimming pool indoor"
-   ],
-   [
-    "Aromaterapie",
-    "aromatherapy candles oil"
-   ],
-   [
-    "Ledová koupel",
-    "ice bath cold plunge"
-   ],
-   [
-    "Luxusní spa",
-    "luxury spa hotel"
    ]
   ]
  },

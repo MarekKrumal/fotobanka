@@ -91,22 +91,62 @@
   .sugg { display: flex; flex-wrap: wrap; gap: 4px; }
   .sugg button { all: unset; cursor: pointer; font-size: 11.5px; padding: 2px 8px; border: 1px dashed #3a5258; border-radius: 999px; color: #9fb3b7; }
   .sugg button:hover { color: #fff; border-color: #7fe3ea; }
-  @media (max-width: 900px) { .app { grid-template-columns: 1fr; } aside { position: static; height: auto; } .dl { grid-template-columns: 1fr; } }
+  /* přepínač Kategorie | Tagy */
+  .seg { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; margin: 0 14px 8px; padding: 4px; background: #eef3f4; border-radius: 10px; }
+  .seg button { border: 0; background: transparent; padding: 7px 8px; border-radius: 7px; cursor: pointer; font-weight: 500; color: var(--muted); }
+  .seg button.on { background: #fff; color: var(--ink); font-weight: 600; box-shadow: 0 1px 3px rgba(0,0,0,.08); }
+  .seg button span { font-size: 11px; color: var(--muted); margin-left: 3px; font-weight: 500; }
+  .pane { flex: 1; overflow: auto; }
+  .pane .tagcloud { border-bottom: 0; padding-top: 8px; }
+  aside .mine { margin: 8px 14px 14px; }
+  aside .mine .btn { width: 100%; text-align: center; display: block; }
+  .tagbar { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin: -4px 0 14px; }
+  /* podkategorie: přilepená lišta */
+  .tabs.stick { position: sticky; top: 0; z-index: 5; background: var(--bg); padding: 10px 0; margin: 0 0 6px; box-shadow: 0 8px 12px -12px rgba(0,0,0,.25); }
+  .tabs button.cur { border-color: var(--brand); background: #e8f8f9; }
+  h2 { scroll-margin-top: 70px; }
+  /* spodní lišta výběru */
+  .pickbar { position: fixed; left: 50%; bottom: 16px; translate: -50% 0; z-index: 8; display: none; align-items: center; gap: 10px; padding: 8px 8px 8px 16px; background: var(--ink); color: #fff; border-radius: 14px; box-shadow: 0 12px 30px rgba(0,0,0,.3); max-width: calc(100vw - 24px); }
+  .pickbar.on { display: flex; }
+  .pickbar b { white-space: nowrap; }
+  .pickbar .btn { border-color: #34474e; background: #1f3238; color: #fff; white-space: nowrap; }
+  .pickbar .btn.pri { background: var(--brand); border-color: var(--brand); color: var(--brand-ink); }
+  .pickbar .prog { font-size: 12px; color: #a9bcc0; white-space: nowrap; }
+  .mtop { display: none; }
+  @media (max-width: 900px) {
+    .app { grid-template-columns: 1fr; }
+    .mtop { display: flex; position: sticky; top: 0; z-index: 9; align-items: center; gap: 10px; padding: 10px 14px; background: var(--panel); border-bottom: 1px solid var(--line); }
+    .mtop b { flex: 1; font-size: 15px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .mtop button { border: 1px solid var(--line); background: #fff; border-radius: 9px; padding: 7px 11px; font-weight: 600; cursor: pointer; }
+    aside { position: fixed; inset: 0 auto 0 0; width: min(330px, 88vw); height: 100dvh; z-index: 20; translate: -100% 0; transition: translate .25s; box-shadow: 0 0 40px rgba(0,0,0,.3); }
+    body.menu aside { translate: 0 0; }
+    body.menu::after { content: ''; position: fixed; inset: 0; background: rgba(0,0,0,.4); z-index: 15; }
+    main { padding: 14px 14px 90px; }
+    h1 { font-size: 19px; }
+    .tabs.stick { top: 55px; flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; margin-inline: -14px; padding-inline: 14px; }
+    .tabs button { white-space: nowrap; }
+    .grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 10px; }
+    .ph .meta .by { display: none; }
+    .dl { grid-template-columns: 1fr; overflow: auto; } .dl-img { min-height: 40vh; }
+    .pickbar { bottom: 10px; padding-left: 12px; gap: 6px; } .pickbar .btn { padding: 7px 9px; }
+  }
 </style>
 </head>
 <body>
+<div class="mtop"><button id="menuBtn" aria-label="Menu">☰ Menu</button><b id="mTitle">Booqito fotobanka</b></div>
 <div class="app">
   <aside>
     <div class="brand"><i></i><div><b>Booqito fotobanka</b><small id="total">—</small></div></div>
     <div class="search"><input id="filter" placeholder="Hledat kategorii nebo tag…" autocomplete="off"></div>
-    <div class="sec">Tagy</div>
-    <div class="tagcloud" id="tags"></div>
-    <div class="sec">Kategorie</div>
-    <nav id="nav"></nav>
+    <div class="seg"><button id="segCat" class="on">Kategorie</button><button id="segTag">Tagy</button></div>
+    <div class="pane" id="paneCat"><nav id="nav"></nav></div>
+    <div class="pane" id="paneTag" hidden><div class="tagcloud" id="tags"></div></div>
+    <div class="mine" id="mine"></div>
   </aside>
   <main id="main"></main>
 </div>
 <dialog id="dlg"></dialog>
+<div class="pickbar" id="pickbar"></div>
 <div class="toast" id="toast"></div>
 
 <script>
@@ -137,30 +177,36 @@ const hasTags = (p) => tagSel.every((t) => (p.tags || []).includes(t))
 async function load() { S = STATIC ? await (await fetch('data.json')).json() : await api('/api/state'); if (!cur) { cur = S.categories[0]; if (count(cur.slug)) view = 'banka' } else cur = S.categories.find((c) => c.slug === cur.slug) || S.categories[0]; renderSide(); render() }
 
 // ---------------------------------------------------------------- levý panel
-function tagCounts() { const m = new Map(); for (const { p } of allBank()) for (const t of p.tags || []) m.set(t, (m.get(t) || 0) + 1); return [...m].sort((a, b) => b[1] - a[1]) }
+function tagCounts() { const m = new Map(); for (const { p } of allBank().filter((x) => view === 'vyber' || x.cat.slug === cur?.slug)) for (const t of p.tags || []) m.set(t, (m.get(t) || 0) + 1); return [...m].sort((a, b) => b[1] - a[1]) }
 function renderSide() {
   const f = $('#filter').value.trim().toLowerCase()
   $('#total').textContent = `${S.categories.length} kategorií · ${allBank().length} fotek ve fotobance`
   $('#tags').innerHTML = tagCounts().filter(([t]) => !f || t.includes(f) || tagSel.includes(t))
     .map(([t, n]) => `<button class="chip ${tagSel.includes(t) ? 'on' : ''}" data-t="${esc(t)}">${esc(t)}<span>${n}</span></button>`).join('') || '<span class="hint">Žádný tag</span>'
   $('#tags').querySelectorAll('.chip').forEach((b) => b.onclick = () => toggleTag(b.dataset.t))
+  $('#segTag').innerHTML = `Tagy${tagSel.length ? `<span>${tagSel.length}</span>` : ''}`
+  $('#mine').innerHTML = STATIC ? `<button class="btn ${view === 'vyber' ? 'pri' : ''}" id="mineBtn">Můj výběr (${picked.size})</button>` : ''
+  if ($('#mineBtn')) $('#mineBtn').onclick = () => { view = 'vyber'; renderSide(); render(); closeMenu() }
   const bank = allBank()
   $('#nav').innerHTML = S.categories.map((c) => {
     const subHit = f ? c.sub.filter((s) => s[0].toLowerCase().includes(f)).map((s) => s[0]) : []
     const tagHit = f && bank.some((x) => x.cat.slug === c.slug && (x.p.tags || []).some((t) => t.includes(f)))
     if (f && !c.name.toLowerCase().includes(f) && !subHit.length && !tagHit) return ''
     const n = count(c.slug)
-    return `<button data-s="${c.slug}" class="${view !== 'tag' && cur && cur.slug === c.slug ? 'on' : ''}"><span>${esc(c.name)}${subHit.length ? `<small class="match">${esc(subHit.join(', '))}</small>` : ''}</span><span class="cnt ${n ? 'ok' : ''}">${n}</span></button>`
+    return `<button data-s="${c.slug}" class="${view !== 'vyber' && cur && cur.slug === c.slug ? 'on' : ''}"><span>${esc(c.name)}${subHit.length ? `<small class="match">${esc(subHit.join(', '))}</small>` : ''}</span><span class="cnt ${n ? 'ok' : ''}">${n}</span></button>`
   }).join('')
   $('#nav').querySelectorAll('button').forEach((b) => b.onclick = () => {
     cur = S.categories.find((c) => c.slug === b.dataset.s); sub = 0; results = []; page = 1; custom = ''
-    tagSel = []; view = count(cur.slug) ? 'banka' : 'hledat'
-    renderSide(); render(); if (view === 'hledat') search()
+    view = count(cur.slug) ? 'banka' : 'hledat'
+    renderSide(); render(); closeMenu(); scrollTo(0, 0); if (view === 'hledat') search()
   })
+  if (f) { const catHit = $('#nav button'), tagHit = $('#tags .chip'); if (!catHit && tagHit) showPane('tag') }
 }
+function showPane(w) { $('#paneCat').hidden = w !== 'cat'; $('#paneTag').hidden = w !== 'tag'; $('#segCat').classList.toggle('on', w === 'cat'); $('#segTag').classList.toggle('on', w === 'tag') }
+const closeMenu = () => document.body.classList.remove('menu')
 function toggleTag(t) {
   tagSel = tagSel.includes(t) ? tagSel.filter((x) => x !== t) : [...tagSel, t]
-  view = tagSel.length ? 'tag' : 'banka'
+  if (view === 'hledat') view = 'banka'
   renderSide(); render()
 }
 
@@ -184,20 +230,22 @@ function bindGrid() {
 function render() {
   shown = []
   let html
-  if (view === 'tag' || view === 'vyber') {
-    const list = view === 'vyber' ? allBank().filter((x) => picked.has(x.p.id)) : allBank().filter((x) => hasTags(x.p))
+  if (view === 'vyber') {
+    const list = (view === 'vyber' ? allBank().filter((x) => picked.has(x.p.id)) : allBank()).filter((x) => hasTags(x.p))
     shown = list
-    html = `<div class="top"><h1>${view === 'vyber' ? 'Můj výběr' : 'Tag: ' + tagSel.map(esc).join(' + ')} <small class="hint">${list.length} fotek</small></h1><div class="tools">${view === 'vyber' ? '<button class="btn danger" id="clearPick">Vyprázdnit výběr</button>' : '<button class="btn" id="clearTags">Zrušit filtr</button>'}${dlBtn()}</div></div>`
+    html = `<div class="top"><h1>${view === 'vyber' ? 'Můj výběr' : 'Tagy'} <small class="hint">${list.length} fotek</small></h1><div class="tools">${view === 'vyber' ? (list.length ? '<button class="btn danger" id="clearPick">Vyprázdnit výběr</button>' : '') : '<button class="btn" id="clearTags">Zrušit filtr</button>'}${dlBtn()}</div></div>`
+    html += tagBar()
     const groups = {}; list.forEach((x, i) => { (groups[x.cat.name] ??= []).push([x, i]) })
-    html += Object.keys(groups).length ? Object.entries(groups).map(([g, l]) => `<h2>${esc(g)} <small>${l.length}</small></h2><div class="grid">${l.map(([x, i]) => card(x.p, x.cat, x.sub, i)).join('')}</div>`).join('') : '<div class="empty">Žádná fotka nemá všechny vybrané tagy.</div>'
+    html += Object.keys(groups).length ? Object.entries(groups).map(([g, l]) => `<h2>${esc(g)} <small>${l.length}</small></h2><div class="grid">${l.map(([x, i]) => card(x.p, x.cat, x.sub, i)).join('')}</div>`).join('') : `<div class="empty">${view === 'vyber' ? 'Zatím nic nevybráno — fotky přidáš tlačítkem + na náhledu.' : 'Žádná fotka nemá všechny vybrané tagy.'}</div>`
   } else {
     const n = count(cur.slug)
-    const subs = cur.sub.map((s, i) => `<button data-i="${i}" class="${view === 'hledat' && i === sub && !custom ? 'on' : ''}">${esc(s[0])}<span>${(S.bank[cur.slug]?.[s[0]] || []).length}</span></button>`).join('')
+    const subN = (name) => (S.bank[cur.slug]?.[name] || []).filter(hasTags).length
+    const subs = cur.sub.filter((s) => !STATIC || subN(s[0])).map((s) => { const i = cur.sub.indexOf(s); return `<button data-i="${i}" class="${view === 'hledat' && i === sub && !custom ? 'on' : ''}">${esc(s[0])}<span>${subN(s[0])}</span></button>` }).join('')
     html = `<div class="top"><h1>${esc(cur.name)}</h1><div class="tools">
       ${STATIC ? '' : `<select id="src" class="btn" title="Zdroj pro hledání">${Object.entries(SRC).map(([k, v]) => `<option value="${k}" ${k === src ? 'selected' : ''}>${v}</option>`).join('')}</select>
       <button class="btn" id="fillCat" title="Doplní 8 fotek do každé podkategorie (Pexels → Pixabay → Openverse)">Doplnit kategorii</button>`}
       ${dlBtn()}</div></div>
-      <div class="tabs"><button id="vBank" class="${view === 'banka' ? 'on' : ''}">${STATIC ? 'Vše' : 'Ve fotobance'}<span>${n}</span></button>${subs}</div>`
+      <div class="tabs ${STATIC ? 'stick' : ''}"><button id="vBank" class="${view === 'banka' ? 'on' : ''}">${STATIC ? 'Vše' : 'Ve fotobance'}<span>${tagSel.length ? allBank().filter((x) => x.cat.slug === cur.slug && hasTags(x.p)).length : n}</span></button>${subs}</div>`
     if (view === 'hledat') {
       const q = custom || cur.sub[sub][1]
       shown = results.map((p) => ({ p, cat: cur, sub: cur.sub[sub][0] }))
@@ -205,14 +253,18 @@ function render() {
       html += results.length ? `<div class="grid" id="grid">${shown.map((x, i) => card(x.p, x.cat, x.sub, i)).join('')}</div><button class="btn more" id="more">Načíst další</button>`
         : `<div class="empty" id="grid">Načítám z ${SRC[src]}…</div>`
     } else {
-      const entries = cur.sub.map((s) => [s[0], S.bank[cur.slug]?.[s[0]] || []]).filter(([, l]) => l.length)
+      html += tagBar()
+      const entries = cur.sub.map((s) => [s[0], (S.bank[cur.slug]?.[s[0]] || []).filter(hasTags)]).filter(([, l]) => l.length)
       let i = 0
       html += entries.length ? entries.map(([s, l]) => { const items = l.map((p) => { shown.push({ p, cat: cur, sub: s }); return card(p, cur, s, i++) }); return `<h2>${esc(s)} <small>${l.length}</small></h2><div class="grid">${items.join('')}</div>` }).join('')
-        : `<div class="empty">V této kategorii zatím nic není. Vyber podkategorii nahoře a přidej fotky, nebo klikni na „Doplnit kategorii“.</div>`
+        : `<div class="empty">${tagSel.length ? 'V této kategorii žádná fotka nemá všechny vybrané tagy.' : 'V této kategorii zatím nic není. Vyber podkategorii nahoře a přidej fotky, nebo klikni na „Doplnit kategorii“.'}</div>`
     }
   }
   $('#main').innerHTML = html
-  bindGrid()
+  $('#mTitle').textContent = view === 'vyber' ? 'Můj výběr' : cur.name
+  $('#main').querySelectorAll('[data-un]').forEach((b) => b.onclick = () => toggleTag(b.dataset.un))
+  if ($('#clearTags2')) $('#clearTags2').onclick = () => { tagSel = []; renderSide(); render() }
+  bindGrid(); spy(); renderPickbar()
   if ($('#ori')) $('#ori').value = ori
   $('#main').querySelectorAll('.tabs button[data-i]').forEach((b) => b.onclick = STATIC ? () => { const h = [...$('#main').querySelectorAll('h2')].find((x) => x.firstChild.textContent.trim() === cur.sub[+b.dataset.i][0]); if (h) h.scrollIntoView({ behavior: 'smooth' }) } : () => { sub = +b.dataset.i; custom = ''; view = 'hledat'; results = []; page = 1; render(); search() })
   if ($('#vBank')) $('#vBank').onclick = () => { view = 'banka'; render() }
@@ -220,14 +272,63 @@ function render() {
   if ($('#src')) $('#src').onchange = (e) => { src = e.target.value; results = []; page = 1; if (view === 'hledat') { render(); search() } }
   if ($('#fillCat')) $('#fillCat').onclick = (e) => fill(e.target, cur.slug)
   if ($('#clearPick')) $('#clearPick').onclick = () => { picked.clear(); savePicked(); renderSide(); render() }
-  if (STATIC) { if ($('#dl')) $('#dl').onclick = () => { if (picked.size) { view = 'vyber'; renderSide(); render() } else toast('Zatím nic nevybráno — fotky přidáš tlačítkem + na náhledu') }; if ($('#csv')) $('#csv').onclick = exportCsv; return }
+  if (STATIC) { if ($('#dl')) $('#dl').onclick = () => { if (picked.size) { view = 'vyber'; renderSide(); render() } else toast('Zatím nic nevybráno — fotky přidáš tlačítkem + na náhledu') }; if ($('#zipTop')) $('#zipTop').onclick = downloadZip; return }
   $('#dl').onclick = async (e) => { e.target.disabled = true; toast('Stahuji ve vysokém rozlišení…'); try { const r = await api('/api/download', { cat: '' }); toast(`Staženo ${r.downloaded}, už existovalo ${r.skipped}${r.errors.length ? `, chyby ${r.errors.length}` : ''}\n${r.dir}`) } catch (er) { toast(er.message) } e.target.disabled = false }
   if ($('#go')) { $('#go').onclick = () => { custom = $('#q').value.trim(); ori = $('#ori').value; results = []; page = 1; search() }; $('#q').onkeydown = (e) => { if (e.key === 'Enter') $('#go').click() }; $('#ori').onchange = () => $('#go').click() }
   if ($('#more')) $('#more').onclick = () => { page++; search(true) }
 }
 
 // ---------------------------------------------------------------- výběr
-function dlBtn() { return STATIC ? (view === 'vyber' ? `<button class="btn pri" id="csv">Exportovat seznam (CSV)</button>` : `<button class="btn pri" id="dl">Můj výběr (${picked.size})</button>`) : '<button class="btn pri" id="dl">Stáhnout vybrané</button>' }
+function dlBtn() { return STATIC ? (view === 'vyber' ? (picked.size ? `<button class="btn pri" id="zipTop">Stáhnout ZIP (${picked.size})</button>` : '') : `<button class="btn" id="dl">Můj výběr (${picked.size})</button>`) : '<button class="btn pri" id="dl">Stáhnout vybrané</button>' }
+// aktivní filtr tagů nad mřížkou
+function tagBar() {
+  if (!tagSel.length) return ''
+  const n = view === 'vyber' ? allBank().filter((x) => picked.has(x.p.id) && hasTags(x.p)).length : allBank().filter((x) => x.cat.slug === cur.slug && hasTags(x.p)).length
+  return `<div class="tagbar"><span class="hint">Filtr:</span>${tagSel.map((t) => `<button class="chip on" data-un="${esc(t)}">${esc(t)} ✕</button>`).join('')}<span class="hint">${n} fotek</span><button class="chip" id="clearTags2">Zrušit filtr</button></div>`
+}
+// lišta dole: počet vybraných + stažení
+function renderPickbar() {
+  const bar = $('#pickbar'); if (!STATIC) return
+  bar.classList.toggle('on', picked.size > 0)
+  if (!picked.size || zipping) return
+  bar.innerHTML = `<b>Vybráno ${picked.size}</b>${view === 'vyber' ? '' : '<button class="btn" id="pbShow">Zobrazit</button>'}<button class="btn pri" id="pbZip">Stáhnout ZIP</button><button class="btn" id="pbClear" title="Zrušit výběr">✕</button>`
+  if ($('#pbShow')) $('#pbShow').onclick = () => { view = 'vyber'; renderSide(); render(); scrollTo(0, 0) }
+  $('#pbZip').onclick = downloadZip
+  $('#pbClear').onclick = () => { picked.clear(); savePicked(); renderSide(); render() }
+}
+// stažení vybraných fotek v plném rozlišení jako ZIP (kategorie/podkategorie/…) + kredity
+let zipping = false
+const loadJSZip = () => window.JSZip ? Promise.resolve(window.JSZip) : new Promise((ok, err) => { const sc = document.createElement('script'); sc.src = 'https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js'; sc.onload = () => ok(window.JSZip); sc.onerror = () => err(new Error('Nepodařilo se načíst JSZip')); document.head.appendChild(sc) })
+const slugify = (t) => String(t).normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')
+async function downloadZip() {
+  if (zipping) return
+  const items = allBank().filter((x) => picked.has(x.p.id)); if (!items.length) return
+  zipping = true; const bar = $('#pickbar')
+  const prog = (t) => { bar.innerHTML = `<b>Stahuji…</b><span class="prog">${t}</span>` }
+  try {
+    const JSZip = await loadJSZip(); const zip = new JSZip(); const credits = [['soubor', 'zdroj', 'autor', 'licence', 'odkaz', 'tagy']]
+    let done = 0, failed = 0, i = 0; prog(`0 / ${items.length}`)
+    const worker = async () => { while (i < items.length) { const x = items[i++]
+      const name = `${slugify(x.cat.name)}/${slugify(x.sub)}/${x.p.id}.jpg`
+      try { const r = await fetch(new URL(x.p.large, location.href)); if (!r.ok) throw 0; zip.file(name, await r.blob()); credits.push([name, x.p.source, x.p.photographer, x.p.license, x.p.page || '', (x.p.tags || []).join(' ')]) } catch { failed++ }
+      prog(`${++done} / ${items.length}`) } }
+    await Promise.all([worker(), worker(), worker(), worker()])
+    zip.file('kredity.tsv', credits.map((r) => r.map((v) => String(v ?? '').replace(/[\t\n]/g, ' ')).join('\t')).join('\n'))
+    prog('balím ZIP…')
+    const blob = await zip.generateAsync({ type: 'blob' })
+    const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = `fotobanka-vyber-${items.length}.zip`; document.body.appendChild(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(a.href), 60000)
+    toast(`Staženo ${done - failed} fotek${failed ? `, ${failed} se nepodařilo` : ''}`)
+  } catch (e) { toast(e.message || 'Stažení selhalo') }
+  zipping = false; renderPickbar()
+}
+// zvýraznění aktuální podkategorie v přilepené liště
+let spyIO
+function spy() {
+  spyIO?.disconnect(); const tabs = [...$('#main').querySelectorAll('.tabs.stick button[data-i]')]; if (!tabs.length) return
+  spyIO = new IntersectionObserver((es) => es.forEach((e) => { if (!e.isIntersecting) return
+    const name = e.target.firstChild.textContent.trim(); tabs.forEach((b) => { const on = cur.sub[+b.dataset.i][0] === name; b.classList.toggle('cur', on); if (on) b.scrollIntoView({ block: 'nearest', inline: 'nearest' }) }) }), { rootMargin: '-80px 0px -70% 0px' })
+  $('#main').querySelectorAll('h2').forEach((h) => spyIO.observe(h))
+}
 function exportCsv() {
   const abs = (u) => new URL(u, location.href).href
   const rows = [['kategorie', 'podkategorie', 'id', 'zdroj', 'autor', 'licence', 'obrázek', 'stránka', 'tagy']]
@@ -242,7 +343,8 @@ async function pick(i) {
     const el = $(`.ph[data-i="${i}"]`)
     if (el) { el.classList.toggle('sel', on); const b = el.querySelector('.chk'); b.textContent = on ? '✓' : '+'; b.title = on ? 'Odebrat z výběru' : 'Přidat do výběru' }
     if ($('#dl')) $('#dl').textContent = `Můj výběr (${picked.size})`
-    toast(on ? 'Přidáno do výběru' : 'Odebráno z výběru')
+    if ($('#mineBtn')) $('#mineBtn').textContent = `Můj výběr (${picked.size})`
+    renderPickbar()
     if ($('#dlg').open) renderDetail()
     return
   }
@@ -322,6 +424,9 @@ async function search(append) {
 }
 
 $('#filter').oninput = renderSide
+$('#segCat').onclick = () => showPane('cat'); $('#segTag').onclick = () => showPane('tag')
+$('#menuBtn').onclick = () => document.body.classList.add('menu')
+document.addEventListener('click', (e) => { if (document.body.classList.contains('menu') && !e.target.closest('aside') && e.target.id !== 'menuBtn') closeMenu() })
 load().then(() => { if (STATIC && view === 'hledat') { view = 'banka'; render() } if (view === 'hledat') search() })
 </script>
 </body>
