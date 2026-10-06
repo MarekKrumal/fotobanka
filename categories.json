@@ -1,0 +1,754 @@
+[
+ {
+  "slug": "volny-cas",
+  "name": "Volný čas (obecné)",
+  "sub": [
+   [
+    "Rodina venku",
+    "family outdoors having fun"
+   ],
+   [
+    "Děti si hrají",
+    "children playing outside"
+   ],
+   [
+    "Přátelé spolu",
+    "group of friends laughing"
+   ],
+   [
+    "Pár na výletě",
+    "couple hiking together"
+   ],
+   [
+    "Příroda a krajina",
+    "beautiful landscape nature"
+   ],
+   [
+    "Hory a turistika",
+    "mountain hiking trail"
+   ],
+   [
+    "Les",
+    "forest path sunlight"
+   ],
+   [
+    "Jezero a řeka",
+    "lake river nature"
+   ],
+   [
+    "Piknik",
+    "picnic in the park"
+   ],
+   [
+    "Na kole",
+    "family cycling"
+   ],
+   [
+    "Město a památky",
+    "european old town street"
+   ],
+   [
+    "Česká krajina",
+    "czech countryside"
+   ],
+   [
+    "Západ slunce",
+    "sunset golden hour people"
+   ],
+   [
+    "Léto u vody",
+    "people swimming lake summer"
+   ],
+   [
+    "Podzim",
+    "autumn walk park"
+   ],
+   [
+    "Zima a sníh",
+    "winter snow fun"
+   ],
+   [
+    "Pes a mazlíčci",
+    "dog owner park"
+   ],
+   [
+    "Senioři aktivně",
+    "active seniors outdoor"
+   ],
+   [
+    "Oslava a radost",
+    "celebration happy people"
+   ],
+   [
+    "Pohoda a kavárna",
+    "friends cafe coffee"
+   ]
+  ]
+ },
+ {
+  "slug": "akce-eventy",
+  "name": "Akce a eventy",
+  "sub": [
+   [
+    "Firemní akce",
+    "corporate event party"
+   ],
+   [
+    "Teambuilding",
+    "team building activity outdoor"
+   ],
+   [
+    "Festivaly a koncerty",
+    "music festival crowd"
+   ],
+   [
+    "Svatby a oslavy",
+    "celebration party friends"
+   ]
+  ]
+ },
+ {
+  "slug": "aquapark",
+  "name": "Aquaparky a bazény",
+  "sub": [
+   [
+    "Tobogány",
+    "water slide aquapark"
+   ],
+   [
+    "Bazén",
+    "indoor swimming pool"
+   ],
+   [
+    "Koupaliště",
+    "outdoor swimming pool summer"
+   ],
+   [
+    "Děti ve vodě",
+    "kids playing in pool"
+   ]
+  ]
+ },
+ {
+  "slug": "bowling",
+  "name": "Bowling",
+  "sub": [
+   [
+    "Dráha a kuželky",
+    "bowling pins lane"
+   ],
+   [
+    "Hráči",
+    "people bowling friends"
+   ],
+   [
+    "Koule",
+    "bowling ball"
+   ],
+   [
+    "Bowling bar",
+    "bowling alley neon"
+   ]
+  ]
+ },
+ {
+  "slug": "detska-hriste",
+  "name": "Dětská hřiště a herny",
+  "sub": [
+   [
+    "Herna",
+    "indoor playground kids"
+   ],
+   [
+    "Venkovní hřiště",
+    "children playground outdoor"
+   ],
+   [
+    "Narozeninová oslava",
+    "kids birthday party"
+   ]
+  ]
+ },
+ {
+  "slug": "exkurze",
+  "name": "Exkurze a prohlídky",
+  "sub": [
+   [
+    "Prohlídka s průvodcem",
+    "guided tour group"
+   ],
+   [
+    "Továrna a výroba",
+    "factory tour workers production line"
+   ],
+   [
+    "Pivovar",
+    "brewery tour"
+   ],
+   [
+    "Vinný sklep",
+    "wine cellar tasting"
+   ]
+  ]
+ },
+ {
+  "slug": "fitness-joga",
+  "name": "Fitness, cvičení a jóga",
+  "sub": [
+   [
+    "Jóga",
+    "yoga class studio"
+   ],
+   [
+    "Skupinové lekce",
+    "group fitness class"
+   ],
+   [
+    "Posilovna",
+    "gym workout"
+   ],
+   [
+    "Pilates",
+    "pilates studio"
+   ],
+   [
+    "Spinning",
+    "indoor cycling class"
+   ]
+  ]
+ },
+ {
+  "slug": "hrady-jeskyne",
+  "name": "Hrady, zámky a jeskyně",
+  "sub": [
+   [
+    "Hrad",
+    "medieval castle"
+   ],
+   [
+    "Zámek",
+    "chateau palace"
+   ],
+   [
+    "Jeskyně",
+    "cave stalactites"
+   ],
+   [
+    "Interiér zámku",
+    "castle interior hall"
+   ]
+  ]
+ },
+ {
+  "slug": "jump-areny",
+  "name": "Jump arény a trampolíny",
+  "sub": [
+   [
+    "Trampolínový park",
+    "trampoline park"
+   ],
+   [
+    "Skákání",
+    "jumping trampoline kids"
+   ],
+   [
+    "Ninja dráha",
+    "ninja obstacle course"
+   ]
+  ]
+ },
+ {
+  "slug": "kosmetika",
+  "name": "Kosmetika a beauty",
+  "sub": [
+   [
+    "Ošetření pleti",
+    "facial treatment beauty salon"
+   ],
+   [
+    "Manikúra",
+    "manicure nails salon"
+   ],
+   [
+    "Kadeřnictví",
+    "hair salon"
+   ],
+   [
+    "Make-up",
+    "makeup artist"
+   ]
+  ]
+ },
+ {
+  "slug": "kurzy-workshopy",
+  "name": "Kurzy a workshopy",
+  "sub": [
+   [
+    "Keramika",
+    "pottery workshop"
+   ],
+   [
+    "Vaření",
+    "cooking class people kitchen"
+   ],
+   [
+    "Malování",
+    "painting workshop"
+   ],
+   [
+    "Tvořivá dílna",
+    "craft workshop people making"
+   ]
+  ]
+ },
+ {
+  "slug": "laser-game",
+  "name": "Laser game",
+  "sub": [
+   [
+    "Laser aréna",
+    "laser tag kids playing"
+   ],
+   [
+    "Hráči s pistolemi",
+    "laser tag game people vest"
+   ],
+   [
+    "Neon",
+    "neon arcade game room"
+   ]
+  ]
+ },
+ {
+  "slug": "masaze",
+  "name": "Masáže",
+  "sub": [
+   [
+    "Klasická masáž",
+    "massage therapy"
+   ],
+   [
+    "Lávové kameny",
+    "hot stone massage"
+   ],
+   [
+    "Masáž obličeje",
+    "face massage spa"
+   ],
+   [
+    "Masážní salon",
+    "massage room candles"
+   ]
+  ]
+ },
+ {
+  "slug": "minigolf",
+  "name": "Minigolf",
+  "sub": [
+   [
+    "Minigolf venku",
+    "mini golf course"
+   ],
+   [
+    "Indoor minigolf",
+    "mini golf people playing"
+   ],
+   [
+    "Rodina",
+    "mini golf kids putting"
+   ]
+  ]
+ },
+ {
+  "slug": "motokary",
+  "name": "Motokáry",
+  "sub": [
+   [
+    "Motokárová dráha",
+    "go kart track"
+   ],
+   [
+    "Závod",
+    "go kart racing"
+   ],
+   [
+    "Indoor motokáry",
+    "indoor karting"
+   ]
+  ]
+ },
+ {
+  "slug": "muzeum",
+  "name": "Muzea a galerie",
+  "sub": [
+   [
+    "Expozice",
+    "museum exhibition"
+   ],
+   [
+    "Galerie umění",
+    "art gallery"
+   ],
+   [
+    "Návštěvníci",
+    "people visiting museum"
+   ]
+  ]
+ },
+ {
+  "slug": "paintball-airsoft",
+  "name": "Paintball a airsoft",
+  "sub": [
+   [
+    "Paintball",
+    "paintball game"
+   ],
+   [
+    "Airsoft",
+    "airsoft players"
+   ],
+   [
+    "Výstroj",
+    "paintball mask gear"
+   ]
+  ]
+ },
+ {
+  "slug": "poskytovatele-sluzeb",
+  "name": "Poskytovatelé služeb",
+  "sub": [
+   [
+    "Konzultace",
+    "consultation meeting"
+   ],
+   [
+    "Recepce",
+    "reception desk"
+   ],
+   [
+    "Řemeslník",
+    "carpenter workshop working"
+   ]
+  ]
+ },
+ {
+  "slug": "pujcovny",
+  "name": "Půjčovny",
+  "sub": [
+   [
+    "Kola",
+    "people cycling rental bikes"
+   ],
+   [
+    "Lodě a paddleboard",
+    "kayak paddleboard rental"
+   ],
+   [
+    "Lyže",
+    "ski rental"
+   ],
+   [
+    "Elektrokoloběžky",
+    "electric scooter"
+   ]
+  ]
+ },
+ {
+  "slug": "raketove-sporty",
+  "name": "Raketové sporty",
+  "sub": [
+   [
+    "Tenis",
+    "tennis court"
+   ],
+   [
+    "Padel",
+    "padel tennis"
+   ],
+   [
+    "Squash",
+    "squash player racket court"
+   ],
+   [
+    "Badminton",
+    "badminton game"
+   ]
+  ]
+ },
+ {
+  "slug": "restaurace",
+  "name": "Restaurace a poukazy",
+  "sub": [
+   [
+    "Restaurace",
+    "restaurant interior"
+   ],
+   [
+    "Jídlo",
+    "gourmet food plating"
+   ],
+   [
+    "Večeře pro dva",
+    "romantic dinner"
+   ],
+   [
+    "Kavárna",
+    "cafe coffee"
+   ]
+  ]
+ },
+ {
+  "slug": "solarium",
+  "name": "Solária",
+  "sub": [
+   [
+    "Solárium",
+    "tanning salon"
+   ],
+   [
+    "Opálená pokožka",
+    "tanned skin woman spa"
+   ]
+  ]
+ },
+ {
+  "slug": "solna-jeskyne",
+  "name": "Solné jeskyně",
+  "sub": [
+   [
+    "Solná jeskyně",
+    "salt room therapy"
+   ],
+   [
+    "Sůl",
+    "salt cave interior"
+   ],
+   [
+    "Relax",
+    "woman relaxing salt room"
+   ]
+  ]
+ },
+ {
+  "slug": "strelnice",
+  "name": "Střelnice",
+  "sub": [
+   [
+    "Střelnice",
+    "shooting range"
+   ],
+   [
+    "Lukostřelba",
+    "archery target"
+   ],
+   [
+    "Terč",
+    "shooting target"
+   ]
+  ]
+ },
+ {
+  "slug": "unikove-hry",
+  "name": "Únikové hry",
+  "sub": [
+   [
+    "Escape room",
+    "escape room players clues"
+   ],
+   [
+    "Hádanky a zámky",
+    "escape room game"
+   ],
+   [
+    "Tým",
+    "escape room friends"
+   ]
+  ]
+ },
+ {
+  "slug": "virtualni-realita",
+  "name": "Virtuální realita",
+  "sub": [
+   [
+    "VR brýle",
+    "virtual reality headset"
+   ],
+   [
+    "VR hra",
+    "person playing vr"
+   ],
+   [
+    "Simulátor",
+    "racing simulator"
+   ]
+  ]
+ },
+ {
+  "slug": "volejbal-fotbal",
+  "name": "Volejbal, fotbal a sportoviště",
+  "sub": [
+   [
+    "Beach volejbal",
+    "beach volleyball players"
+   ],
+   [
+    "Fotbal",
+    "football pitch"
+   ],
+   [
+    "Sportovní hala",
+    "indoor sports hall basketball court"
+   ],
+   [
+    "Florbal",
+    "floorball"
+   ]
+  ]
+ },
+ {
+  "slug": "volnocasove-aktivity",
+  "name": "Volnočasové aktivity",
+  "sub": [
+   [
+    "Lezení",
+    "climbing wall"
+   ],
+   [
+    "Lanový park",
+    "rope park adventure"
+   ],
+   [
+    "Rafting",
+    "rafting river"
+   ],
+   [
+    "Golf",
+    "golf course"
+   ]
+  ]
+ },
+ {
+  "slug": "wellness",
+  "name": "Wellness, spa a masáže",
+  "sub": [
+   [
+    "Sauna",
+    "sauna wood"
+   ],
+   [
+    "Vířivka",
+    "hot tub jacuzzi"
+   ],
+   [
+    "Spa",
+    "spa wellness relaxation"
+   ],
+   [
+    "Pára",
+    "steam bath spa"
+   ],
+   [
+    "Masáže",
+    "massage spa relaxation"
+   ],
+   [
+    "Masáž lávovými kameny",
+    "hot stones spa back"
+   ],
+   [
+    "Masáž pro páry",
+    "couple massage spa"
+   ],
+   [
+    "Kosmetické ošetření",
+    "facial treatment spa"
+   ],
+   [
+    "Relax zóna",
+    "spa relaxation lounge"
+   ],
+   [
+    "Termální lázně",
+    "thermal bath pool"
+   ],
+   [
+    "Wellness bazén",
+    "spa swimming pool indoor"
+   ],
+   [
+    "Aromaterapie",
+    "aromatherapy candles oil"
+   ],
+   [
+    "Ledová koupel",
+    "ice bath cold plunge"
+   ],
+   [
+    "Luxusní spa",
+    "luxury spa hotel"
+   ]
+  ]
+ },
+ {
+  "slug": "zabavne-parky",
+  "name": "Zábavní parky",
+  "sub": [
+   [
+    "Horská dráha",
+    "roller coaster"
+   ],
+   [
+    "Kolotoč",
+    "carousel amusement park"
+   ],
+   [
+    "Pouť",
+    "fairground lights"
+   ]
+  ]
+ },
+ {
+  "slug": "zazitky",
+  "name": "Zážitky",
+  "sub": [
+   [
+    "Let balónem",
+    "hot air balloon"
+   ],
+   [
+    "Seskok padákem",
+    "skydiving"
+   ],
+   [
+    "Jízda autem",
+    "sports car driving"
+   ],
+   [
+    "Vyhlídkový let",
+    "helicopter passenger view aerial"
+   ]
+  ]
+ },
+ {
+  "slug": "zoo",
+  "name": "Zoo a zvířata",
+  "sub": [
+   [
+    "Zoo",
+    "zoo animals"
+   ],
+   [
+    "Krmení zvířat",
+    "zoo keeper feeding animals"
+   ],
+   [
+    "Akvárium",
+    "aquarium fish"
+   ],
+   [
+    "Statek",
+    "petting zoo"
+   ]
+  ]
+ }
+]

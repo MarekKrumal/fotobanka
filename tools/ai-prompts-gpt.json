@@ -1,0 +1,553 @@
+{
+ "style": "Authentic professional stock photograph for a business website, candid moment, natural light, realistic skin and true-to-life colors, full-frame camera 35mm, shallow depth of field, Central European setting, everyone tastefully dressed, no readable text, no logos, no watermark.",
+ "per": 3,
+ "model": "gpt_image_2_5",
+ "params": [
+  "--quality",
+  "high",
+  "--resolution",
+  "2k"
+ ],
+ "items": [
+  [
+   "masaze",
+   "Klasická masáž",
+   [
+    "žena",
+    "relax",
+    "uvnitř"
+   ],
+   "A woman lying on a massage table covered by a large white towel up to her shoulders, a therapist in a uniform massaging her shoulders, calm wooden-toned massage room with candles and plants"
+  ],
+  [
+   "masaze",
+   "Klasická masáž",
+   [
+    "žena",
+    "relax",
+    "uvnitř"
+   ],
+   "Massage therapist in a beige uniform preparing a massage table with fresh towels and oil bottles in a bright calm studio, smiling"
+  ],
+  [
+   "masaze",
+   "Klasická masáž",
+   [
+    "žena",
+    "relax",
+    "uvnitř"
+   ],
+   "A man in his fifties lying on a massage table draped with a towel, therapist working on his neck, soft daylight, relaxed expression"
+  ],
+  [
+   "masaze",
+   "Lávové kameny",
+   [
+    "relax",
+    "uvnitř",
+    "detail"
+   ],
+   "Therapist's hands placing smooth warm black basalt stones on a towel-draped back, calm spa room, warm candle light"
+  ],
+  [
+   "masaze",
+   "Lávové kameny",
+   [
+    "relax",
+    "uvnitř",
+    "detail"
+   ],
+   "Still life of heated black lava stones arranged in a wooden tray with a folded towel, eucalyptus and an oil bottle, spa atmosphere"
+  ],
+  [
+   "masaze",
+   "Masáž obličeje",
+   [
+    "žena",
+    "relax",
+    "uvnitř"
+   ],
+   "A woman lying on a treatment bed with a white headband and towel up to the collarbone, eyes closed, therapist gently massaging her temples"
+  ],
+  [
+   "masaze",
+   "Masáž obličeje",
+   [
+    "žena",
+    "relax",
+    "uvnitř"
+   ],
+   "Calm head and scalp massage, woman lying on her back with eyes closed, therapist's fingers in her hair, soft warm light"
+  ],
+  [
+   "masaze",
+   "Masážní salon",
+   [
+    "bez lidí",
+    "uvnitř"
+   ],
+   "Interior of a small boutique massage salon: massage table with neatly folded white towels, wooden shelves with plants and candles, linen curtain, warm daylight"
+  ],
+  [
+   "masaze",
+   "Masážní salon",
+   [
+    "bez lidí",
+    "uvnitř"
+   ],
+   "Cozy reception of a massage salon with a wooden counter, armchair, plants and herbal tea set, no people, warm light"
+  ],
+  [
+   "masaze",
+   "Masážní salon",
+   [
+    "bez lidí",
+    "uvnitř"
+   ],
+   "Massage therapist greeting a smiling female client at the reception of a calm boutique massage salon"
+  ],
+  [
+   "wellness",
+   "Masáž pro páry",
+   [
+    "pár",
+    "relax",
+    "uvnitř"
+   ],
+   "A couple lying side by side on two massage tables draped with white towels up to their shoulders, two therapists massaging their shoulders, romantic candle-lit spa room"
+  ],
+  [
+   "wellness",
+   "Masáž pro páry",
+   [
+    "pár",
+    "relax",
+    "uvnitř"
+   ],
+   "A couple in white bathrobes smiling and toasting with herbal tea in a spa relaxation lounge after a couples massage"
+  ],
+  [
+   "wellness",
+   "Sauna",
+   [
+    "přátelé",
+    "relax",
+    "uvnitř"
+   ],
+   "Three friends wrapped in large towels sitting on wooden benches in a Finnish sauna, warm amber light, relaxed smiles"
+  ],
+  [
+   "wellness",
+   "Sauna",
+   [
+    "přátelé",
+    "relax",
+    "uvnitř"
+   ],
+   "A woman wrapped in a towel pouring water from a wooden ladle onto hot sauna stones, steam rising, cozy wooden sauna"
+  ],
+  [
+   "wellness",
+   "Sauna",
+   [
+    "přátelé",
+    "relax",
+    "uvnitř"
+   ],
+   "Interior of a modern panoramic sauna with wooden benches and a large window overlooking a snowy forest, no people"
+  ],
+  [
+   "wellness",
+   "Sauna",
+   [
+    "přátelé",
+    "relax",
+    "uvnitř"
+   ],
+   "Outdoor wooden barrel sauna in a garden at dusk, warm glowing window, chimney smoke, no people visible"
+  ],
+  [
+   "wellness",
+   "Vířivka",
+   [
+    "voda",
+    "relax"
+   ],
+   "Smiling couple in swimwear in an outdoor hot tub on a wooden terrace, shoulders above water, steam, evening light"
+  ],
+  [
+   "wellness",
+   "Vířivka",
+   [
+    "voda",
+    "relax"
+   ],
+   "Three friends in swimwear laughing in a bubbling indoor whirlpool at a modern wellness center, shoulders above water"
+  ],
+  [
+   "wellness",
+   "Vířivka",
+   [
+    "voda",
+    "relax"
+   ],
+   "Empty bubbling jacuzzi with blue underwater lights in a luxury spa at night, steam over the water"
+  ],
+  [
+   "wellness",
+   "Vířivka",
+   [
+    "voda",
+    "relax"
+   ],
+   "Family with two kids in swimwear enjoying a warm whirlpool in a family aquapark wellness zone, kids smiling"
+  ],
+  [
+   "solarium",
+   "Solárium",
+   [
+    "uvnitř"
+   ],
+   "Modern tanning studio interior with a vertical tanning booth with its door open, violet UV glow, clean tiles, no people"
+  ],
+  [
+   "solarium",
+   "Solárium",
+   [
+    "uvnitř"
+   ],
+   "Young woman in a white bathrobe at the reception of a tanning studio talking to a friendly receptionist, modern interior"
+  ],
+  [
+   "solarium",
+   "Solárium",
+   [
+    "uvnitř"
+   ],
+   "Horizontal tanning bed with its lid open in a stylish solarium cabin, violet glow, towel on a hook, no people"
+  ],
+  [
+   "solarium",
+   "Solárium",
+   [
+    "uvnitř"
+   ],
+   "Woman in a bathrobe adjusting the settings on a tanning bed control panel, modern solarium cabin"
+  ],
+  [
+   "solarium",
+   "Opálená pokožka",
+   [
+    "žena",
+    "detail"
+   ],
+   "Portrait of a smiling woman with a healthy golden tan, wearing a white linen shirt, soft daylight"
+  ],
+  [
+   "solarium",
+   "Opálená pokožka",
+   [
+    "žena",
+    "detail"
+   ],
+   "Close-up of a tanned arm applying moisturizing lotion, soft warm light, skin care"
+  ],
+  [
+   "volny-cas",
+   "Rodina venku",
+   [
+    "rodina",
+    "děti",
+    "venku"
+   ],
+   "Family with two kids hiking on a forest trail in autumn, children holding parents' hands, golden light"
+  ],
+  [
+   "volny-cas",
+   "Rodina venku",
+   [
+    "rodina",
+    "děti",
+    "venku"
+   ],
+   "Grandparents, parents and kids having a picnic on a meadow, laughing, summer"
+  ],
+  [
+   "volny-cas",
+   "Rodina venku",
+   [
+    "rodina",
+    "děti",
+    "venku"
+   ],
+   "Family flying a kite on a hill on a windy day, child holding the string, parents cheering"
+  ],
+  [
+   "volny-cas",
+   "Děti si hrají",
+   [
+    "děti"
+   ],
+   "Kids building a den from branches in the woods, joyful, summer"
+  ],
+  [
+   "volny-cas",
+   "Děti si hrají",
+   [
+    "děti"
+   ],
+   "Two siblings playing with a soap bubble wand in a garden, bubbles in the air, golden hour"
+  ],
+  [
+   "volny-cas",
+   "Děti si hrají",
+   [
+    "děti"
+   ],
+   "Children playing hopscotch drawn with chalk on a sidewalk, sunny day"
+  ],
+  [
+   "fitness-joga",
+   "Jóga",
+   [
+    "sport",
+    "relax"
+   ],
+   "Small group yoga class in a bright studio with wooden floor and large windows, people in child's pose, instructor walking between mats"
+  ],
+  [
+   "fitness-joga",
+   "Jóga",
+   [
+    "sport",
+    "relax"
+   ],
+   "Woman practicing yoga on a terrace at sunrise, warrior pose, calm"
+  ],
+  [
+   "fitness-joga",
+   "Jóga",
+   [
+    "sport",
+    "relax"
+   ],
+   "Prenatal yoga class, pregnant women sitting on mats with an instructor, bright studio"
+  ],
+  [
+   "virtualni-realita",
+   "VR brýle",
+   [
+    "uvnitř"
+   ],
+   "Young man wearing a plain unbranded black VR headset, holding controllers, amazed expression, modern VR arcade with neon accents"
+  ],
+  [
+   "virtualni-realita",
+   "VR brýle",
+   [
+    "uvnitř"
+   ],
+   "Smiling woman taking off a plain unbranded VR headset, excited, colorful arcade lights"
+  ],
+  [
+   "virtualni-realita",
+   "VR brýle",
+   [
+    "uvnitř"
+   ],
+   "Staff member helping a customer put on a plain unbranded VR headset at a VR arcade"
+  ],
+  [
+   "virtualni-realita",
+   "VR hra",
+   [
+    "přátelé",
+    "uvnitř",
+    "akce"
+   ],
+   "Two teenagers playing a cooperative VR game in an open play zone, wearing plain unbranded headsets, dynamic neon light"
+  ],
+  [
+   "virtualni-realita",
+   "VR hra",
+   [
+    "přátelé",
+    "uvnitř",
+    "akce"
+   ],
+   "Group of colleagues at a team-building event cheering while one person plays VR in an arcade"
+  ],
+  [
+   "virtualni-realita",
+   "VR hra",
+   [
+    "přátelé",
+    "uvnitř",
+    "akce"
+   ],
+   "Father and son high-fiving after playing VR at a family entertainment center, headset pushed up on the boy's forehead"
+  ],
+  [
+   "virtualni-realita",
+   "Simulátor",
+   [
+    "uvnitř",
+    "akce"
+   ],
+   "Man in a plain VR headset sitting in a racing simulator cockpit with steering wheel and pedals, neon arcade"
+  ],
+  [
+   "virtualni-realita",
+   "Simulátor",
+   [
+    "uvnitř",
+    "akce"
+   ],
+   "Young woman in a VR headset inside a flight simulator seat on a motion platform, excited, arcade lighting"
+  ],
+  [
+   "raketove-sporty",
+   "Tenis",
+   [
+    "sport",
+    "venku"
+   ],
+   "Male tennis player hitting a forehand on a red clay court, sunny day, crisp motion"
+  ],
+  [
+   "raketove-sporty",
+   "Tenis",
+   [
+    "sport",
+    "venku"
+   ],
+   "Female tennis player in a white outfit serving on an outdoor hard court, ball tossed in the air"
+  ],
+  [
+   "raketove-sporty",
+   "Tenis",
+   [
+    "sport",
+    "venku"
+   ],
+   "Tennis coach feeding balls to a junior player on a clay court"
+  ],
+  [
+   "raketove-sporty",
+   "Tenis",
+   [
+    "sport",
+    "venku"
+   ],
+   "Four friends in sports clothes chatting at the net after a doubles tennis match, clay court"
+  ],
+  [
+   "raketove-sporty",
+   "Squash",
+   [
+    "sport",
+    "uvnitř"
+   ],
+   "Woman playing squash in a white squash court with a glass back wall, swinging a squash racket toward the front wall, protective goggles"
+  ],
+  [
+   "raketove-sporty",
+   "Squash",
+   [
+    "sport",
+    "uvnitř"
+   ],
+   "Two players walking off a squash court through the glass door, towels on shoulders, smiling"
+  ],
+  [
+   "raketove-sporty",
+   "Squash",
+   [
+    "sport",
+    "uvnitř"
+   ],
+   "Squash racket and a small black squash ball lying on the light wooden floor of a squash court near the red service line"
+  ],
+  [
+   "raketove-sporty",
+   "Squash",
+   [
+    "sport",
+    "uvnitř"
+   ],
+   "Wide view of an empty squash court with a glass back wall and white walls, bright lighting"
+  ],
+  [
+   "raketove-sporty",
+   "Badminton",
+   [
+    "sport",
+    "uvnitř"
+   ],
+   "Badminton player jumping for a smash in an indoor sports hall with green courts"
+  ],
+  [
+   "raketove-sporty",
+   "Badminton",
+   [
+    "sport",
+    "uvnitř"
+   ],
+   "Mixed doubles badminton match in an indoor hall, players near the net"
+  ],
+  [
+   "detska-hriste",
+   "Herna",
+   [
+    "děti",
+    "uvnitř"
+   ],
+   "Children playing in a large colorful indoor soft play center with slides and climbing nets"
+  ],
+  [
+   "detska-hriste",
+   "Herna",
+   [
+    "děti",
+    "uvnitř"
+   ],
+   "Toddler laughing in a ball pit with pastel balls in an indoor playroom"
+  ],
+  [
+   "detska-hriste",
+   "Herna",
+   [
+    "děti",
+    "uvnitř"
+   ],
+   "Parents having coffee at a café area of a kids play center while children play in the background"
+  ],
+  [
+   "detska-hriste",
+   "Narozeninová oslava",
+   [
+    "děti",
+    "uvnitř"
+   ],
+   "Children's birthday party in a play center, kids in party hats around a table with a cake, balloons"
+  ],
+  [
+   "detska-hriste",
+   "Narozeninová oslava",
+   [
+    "děti",
+    "uvnitř"
+   ],
+   "Girl blowing out candles on a birthday cake while friends clap, colorful decorations"
+  ],
+  [
+   "detska-hriste",
+   "Narozeninová oslava",
+   [
+    "děti",
+    "uvnitř"
+   ],
+   "Decorated party room in a children's play center with balloons and a set table, no people"
+  ]
+ ]
+}

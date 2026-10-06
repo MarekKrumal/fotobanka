@@ -1,0 +1,478 @@
+{
+ "style": "Authentic professional stock photograph for a business website, candid moment, natural light, realistic skin and true-to-life colors, full-frame camera 35mm, shallow depth of field, Central European setting, everyone tastefully dressed, no readable text, no logos, no watermark.",
+ "per": 1,
+ "model": "gpt_image_2_5",
+ "params": [
+  "--quality",
+  "high",
+  "--resolution",
+  "2k"
+ ],
+ "items": [
+  [
+   "raketove-sporty",
+   "Badminton",
+   [
+    "sport",
+    "uvnitř",
+    "akce"
+   ],
+   "Badminton player hitting a white feather shuttlecock clearly visible in mid-air above the net, indoor hall with green courts"
+  ],
+  [
+   "raketove-sporty",
+   "Badminton",
+   [
+    "sport",
+    "uvnitř",
+    "akce"
+   ],
+   "Close-up of a badminton racket striking a white feather shuttlecock, motion, indoor hall"
+  ],
+  [
+   "raketove-sporty",
+   "Badminton",
+   [
+    "sport",
+    "uvnitř",
+    "akce"
+   ],
+   "Young woman serving a white shuttlecock in badminton, shuttlecock visible in her hand and racket ready, indoor court"
+  ],
+  [
+   "raketove-sporty",
+   "Badminton",
+   [
+    "sport",
+    "uvnitř",
+    "akce"
+   ],
+   "Two teenagers playing badminton in a school gym, white shuttlecock flying over the net"
+  ],
+  [
+   "raketove-sporty",
+   "Badminton",
+   [
+    "sport",
+    "uvnitř",
+    "akce"
+   ],
+   "Senior couple playing friendly badminton in a sports hall, shuttlecock visible in the air"
+  ],
+  [
+   "raketove-sporty",
+   "Squash",
+   [
+    "sport",
+    "uvnitř"
+   ],
+   "Close-up of a man gripping a squash racket with a small teardrop-shaped head, ready stance inside a white squash court"
+  ],
+  [
+   "raketove-sporty",
+   "Squash",
+   [
+    "sport",
+    "uvnitř"
+   ],
+   "Squash coach explaining technique to a young player inside a glass-backed squash court, both holding squash rackets"
+  ],
+  [
+   "raketove-sporty",
+   "Squash",
+   [
+    "sport",
+    "uvnitř"
+   ],
+   "Two women resting on a bench outside a glass squash court with water bottles and squash rackets, smiling"
+  ],
+  [
+   "raketove-sporty",
+   "Tenis",
+   [
+    "sport",
+    "venku"
+   ],
+   "Close-up of a yellow tennis ball hitting the strings of a tennis racket, clay court background"
+  ],
+  [
+   "raketove-sporty",
+   "Tenis",
+   [
+    "sport",
+    "venku"
+   ],
+   "Kids tennis lesson on a clay court, small group of children with junior rackets and a coach, yellow balls around"
+  ],
+  [
+   "raketove-sporty",
+   "Tenis",
+   [
+    "sport",
+    "venku"
+   ],
+   "Senior man playing tennis on an outdoor hard court in the morning, backhand"
+  ],
+  [
+   "detska-hriste",
+   "Narozeninová oslava",
+   [
+    "děti",
+    "uvnitř"
+   ],
+   "Group of six children aged 6-8 in party hats laughing around a birthday cake in a colorful kids play center, no adults in frame"
+  ],
+  [
+   "detska-hriste",
+   "Narozeninová oslava",
+   [
+    "děti",
+    "uvnitř"
+   ],
+   "Kids playing a party game with balloons in a decorated playroom at a birthday party, joyful motion"
+  ],
+  [
+   "detska-hriste",
+   "Narozeninová oslava",
+   [
+    "děti",
+    "uvnitř"
+   ],
+   "Boy opening a wrapped present at his birthday party, friends watching excitedly, play center background"
+  ],
+  [
+   "detska-hriste",
+   "Narozeninová oslava",
+   [
+    "děti",
+    "uvnitř"
+   ],
+   "Close-up of a colorful birthday cake with lit candles on a party table with paper cups and confetti"
+  ],
+  [
+   "detska-hriste",
+   "Herna",
+   [
+    "děti",
+    "uvnitř"
+   ],
+   "Kids climbing a rope net in a modern indoor playground, bright pastel colors"
+  ],
+  [
+   "detska-hriste",
+   "Herna",
+   [
+    "děti",
+    "uvnitř"
+   ],
+   "Little girl sliding down a wide wavy slide in an indoor play center, arms up, joy"
+  ],
+  [
+   "detska-hriste",
+   "Herna",
+   [
+    "děti",
+    "uvnitř"
+   ],
+   "Toddler zone of an indoor play center with soft blocks and a small slide, two toddlers playing"
+  ],
+  [
+   "detska-hriste",
+   "Herna",
+   [
+    "děti",
+    "uvnitř"
+   ],
+   "Children playing on a trampoline area in an indoor kids center, jumping"
+  ],
+  [
+   "volny-cas",
+   "Děti si hrají",
+   [
+    "děti",
+    "venku"
+   ],
+   "Children playing football on a village meadow on a summer evening"
+  ],
+  [
+   "volny-cas",
+   "Děti si hrají",
+   [
+    "děti",
+    "venku"
+   ],
+   "Kids balancing on a fallen tree trunk in the forest, adventure"
+  ],
+  [
+   "volny-cas",
+   "Děti si hrají",
+   [
+    "děti",
+    "venku"
+   ],
+   "Little boy and girl building a sandcastle at a lakeside beach"
+  ],
+  [
+   "volny-cas",
+   "Děti si hrají",
+   [
+    "děti",
+    "venku"
+   ],
+   "Children riding scooters in a park, autumn leaves"
+  ],
+  [
+   "volny-cas",
+   "Děti si hrají",
+   [
+    "děti",
+    "venku"
+   ],
+   "Kids playing in fresh snow, throwing snowballs, winter clothing"
+  ],
+  [
+   "volny-cas",
+   "Rodina venku",
+   [
+    "rodina",
+    "děti",
+    "venku"
+   ],
+   "Family walking through a historic Czech town square, kids eating ice cream"
+  ],
+  [
+   "volny-cas",
+   "Rodina venku",
+   [
+    "rodina",
+    "děti",
+    "venku"
+   ],
+   "Family canoeing on a calm river, children in life jackets"
+  ],
+  [
+   "volny-cas",
+   "Rodina venku",
+   [
+    "rodina",
+    "děti",
+    "venku"
+   ],
+   "Parents and kids visiting a castle courtyard on a sunny day"
+  ],
+  [
+   "volny-cas",
+   "Rodina venku",
+   [
+    "rodina",
+    "děti",
+    "venku"
+   ],
+   "Family cycling on a riverside bike path, child in a bike seat"
+  ],
+  [
+   "volny-cas",
+   "Rodina venku",
+   [
+    "rodina",
+    "děti",
+    "venku"
+   ],
+   "Mother and daughter picking apples in an orchard in autumn"
+  ],
+  [
+   "fitness-joga",
+   "Jóga",
+   [
+    "sport",
+    "relax",
+    "uvnitř"
+   ],
+   "Yoga instructor leading a class from the front of a bright studio, students in tree pose"
+  ],
+  [
+   "fitness-joga",
+   "Jóga",
+   [
+    "sport",
+    "relax",
+    "uvnitř"
+   ],
+   "Man and woman practicing yoga side by side in a studio with plants, downward dog"
+  ],
+  [
+   "fitness-joga",
+   "Jóga",
+   [
+    "sport",
+    "relax",
+    "uvnitř"
+   ],
+   "Relaxation at the end of a yoga class, people lying on mats with blankets, dim warm light"
+  ],
+  [
+   "fitness-joga",
+   "Jóga",
+   [
+    "sport",
+    "relax",
+    "uvnitř"
+   ],
+   "Aerial yoga class with silk hammocks in a bright studio"
+  ],
+  [
+   "virtualni-realita",
+   "VR brýle",
+   [
+    "uvnitř"
+   ],
+   "Senior man trying a plain unbranded VR headset for the first time, surprised smile, bright room"
+  ],
+  [
+   "virtualni-realita",
+   "VR brýle",
+   [
+    "uvnitř"
+   ],
+   "Girl around 12 wearing a plain unbranded VR headset and reaching out with controllers, colorful arcade"
+  ],
+  [
+   "virtualni-realita",
+   "VR brýle",
+   [
+    "uvnitř"
+   ],
+   "Row of plain unbranded VR headsets hanging on a charging wall in a VR arcade, neon light, no people"
+  ],
+  [
+   "virtualni-realita",
+   "VR hra",
+   [
+    "přátelé",
+    "uvnitř"
+   ],
+   "Birthday group of teenagers at a VR arcade, one playing with a plain headset while others laugh and cheer"
+  ],
+  [
+   "virtualni-realita",
+   "VR hra",
+   [
+    "přátelé",
+    "uvnitř"
+   ],
+   "Two friends dueling in a VR game in an open arena, plain headsets, neon light, dynamic"
+  ],
+  [
+   "wellness",
+   "Sauna",
+   [
+    "relax",
+    "uvnitř"
+   ],
+   "Couple wrapped in towels relaxing on loungers in a calm wellness rest area after the sauna, herbal tea"
+  ],
+  [
+   "wellness",
+   "Sauna",
+   [
+    "relax",
+    "uvnitř"
+   ],
+   "Wooden sauna interior with a glass door, steam, a towel on the bench, warm light, no people"
+  ],
+  [
+   "wellness",
+   "Sauna",
+   [
+    "relax",
+    "uvnitř"
+   ],
+   "Group of women in bathrobes walking from the sauna to a cold plunge pool in a wellness center"
+  ],
+  [
+   "wellness",
+   "Sauna",
+   [
+    "relax",
+    "uvnitř"
+   ],
+   "Man cooling off under a bucket shower next to a sauna, wearing swim shorts"
+  ],
+  [
+   "wellness",
+   "Vířivka",
+   [
+    "voda"
+   ],
+   "Rooftop hot tub with a city view at dusk, empty, steam and soft lights"
+  ],
+  [
+   "wellness",
+   "Vířivka",
+   [
+    "voda"
+   ],
+   "Two women friends in swimwear laughing in a whirlpool in a hotel spa, shoulders above water"
+  ],
+  [
+   "solarium",
+   "Solárium",
+   [
+    "uvnitř"
+   ],
+   "Clean modern tanning studio corridor with several cabin doors, soft violet light, no people"
+  ],
+  [
+   "solarium",
+   "Solárium",
+   [
+    "uvnitř"
+   ],
+   "Receptionist cleaning and preparing a tanning bed with a disinfectant spray and cloth"
+  ],
+  [
+   "solarium",
+   "Solárium",
+   [
+    "uvnitř"
+   ],
+   "Woman in a bathrobe putting on protective tanning goggles before a session, modern solarium cabin"
+  ],
+  [
+   "masaze",
+   "Klasická masáž",
+   [
+    "relax",
+    "uvnitř"
+   ],
+   "Massage therapist warming oil between her hands next to a draped massage table, close-up of hands, warm light"
+  ],
+  [
+   "masaze",
+   "Klasická masáž",
+   [
+    "relax",
+    "uvnitř"
+   ],
+   "Sports massage of a runner's calf on a massage table, therapist in a uniform, bright physiotherapy room"
+  ],
+  [
+   "masaze",
+   "Masážní salon",
+   [
+    "uvnitř"
+   ],
+   "Massage salon room with two massage tables side by side for couples, candles, plants, no people"
+  ],
+  [
+   "wellness",
+   "Masáž pro páry",
+   [
+    "pár",
+    "relax",
+    "uvnitř"
+   ],
+   "Couple lying face down on two towel-draped massage tables, side by side, therapists applying hot stones, candle light"
+  ]
+ ]
+}

@@ -1,0 +1,11 @@
+data/*
+!data/banka.json
+!data/vyrazene.json
+!data/ai/
+data/ai/*
+!data/ai/manifest.jsonl
+!data/ai/rejected.jsonl
+stazene/
+_site/
+node_modules
+.env

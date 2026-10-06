@@ -1,0 +1,53 @@
+{
+ "style": "Authentic professional stock photograph, candid moment, natural soft light, realistic skin texture and true-to-life colors, shot on full-frame camera 35mm, shallow depth of field, Central European setting, no text, no logos, no watermark.",
+ "per": 1,
+ "model": "gpt_image_2_5",
+ "params": [
+  "--quality",
+  "high",
+  "--resolution",
+  "2k"
+ ],
+ "items": [
+  [
+   "raketove-sporty",
+   "Squash",
+   [
+    "muž",
+    "uvnitř",
+    "sport",
+    "akce"
+   ],
+   "Two men playing squash in a white squash court with a glass back wall, one player lunging with a squash racket (small head, long thin shaft) toward a small black squash ball near the front wall"
+  ],
+  [
+   "virtualni-realita",
+   "VR hra",
+   [
+    "přátelé",
+    "uvnitř",
+    "akce"
+   ],
+   "Three friends in casual clothes playing a VR game in a modern VR arcade, each wearing a plain unbranded black VR headset and holding controllers, laughing, neon blue and magenta lighting"
+  ],
+  [
+   "solarium",
+   "Solárium",
+   [
+    "žena",
+    "uvnitř"
+   ],
+   "Fully clothed young woman in a white bathrobe standing next to a modern vertical tanning booth with its door open, violet UV glow, clean tanning studio"
+  ],
+  [
+   "wellness",
+   "Vířivka",
+   [
+    "pár",
+    "venku",
+    "voda"
+   ],
+   "Smiling couple in swimwear sitting in an outdoor wooden hot tub on a terrace, shoulders above water, steam, mountain view at golden hour"
+  ]
+ ]
+}

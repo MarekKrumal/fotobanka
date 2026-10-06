@@ -1,0 +1,187 @@
+{
+ "style": "Authentic professional stock photograph for a business website, candid moment, natural light, realistic skin and true-to-life colors, full-frame camera 35mm, shallow depth of field, Central European setting, everyone tastefully dressed, no readable text, no logos, no watermark.",
+ "per": 1,
+ "model": "gpt_image_2_5",
+ "params": [
+  "--quality",
+  "high",
+  "--resolution",
+  "2k"
+ ],
+ "items": [
+  [
+   "solarium",
+   "Solárium",
+   [
+    "žena",
+    "uvnitř"
+   ],
+   "Smiling woman in a bathrobe leaving a tanning cabin, modern solarium studio corridor, soft violet light"
+  ],
+  [
+   "solarium",
+   "Solárium",
+   [
+    "uvnitř",
+    "bez lidí",
+    "luxus"
+   ],
+   "Premium tanning studio lounge with comfortable chairs, plants and a glimpse of a glowing vertical tanning booth, no people"
+  ],
+  [
+   "solarium",
+   "Opálená pokožka",
+   [
+    "žena",
+    "venku",
+    "léto"
+   ],
+   "Woman with a natural healthy tan in a light summer dress laughing on a terrace, soft evening light"
+  ],
+  [
+   "solarium",
+   "Opálená pokožka",
+   [
+    "muž",
+    "detail"
+   ],
+   "Portrait of a smiling man with lightly tanned skin in a white t-shirt, natural light"
+  ],
+  [
+   "wellness",
+   "Vířivka",
+   [
+    "voda",
+    "bez lidí",
+    "venku"
+   ],
+   "Wooden outdoor hot tub on a forest cabin deck in autumn, steam rising, no people"
+  ],
+  [
+   "wellness",
+   "Vířivka",
+   [
+    "pár",
+    "voda",
+    "noc"
+   ],
+   "Couple in swimwear relaxing in a hot tub under a starry sky, warm lantern light, shoulders above water"
+  ],
+  [
+   "wellness",
+   "Sauna",
+   [
+    "bez lidí",
+    "venku",
+    "zima"
+   ],
+   "Modern wooden sauna cabin with a large window by a frozen lake in winter at dusk, warm light, no people"
+  ],
+  [
+   "wellness",
+   "Sauna",
+   [
+    "přátelé",
+    "relax",
+    "uvnitř"
+   ],
+   "Friends in bathrobes sitting by a fireplace with tea in a wellness lounge after sauna, cozy"
+  ],
+  [
+   "masaze",
+   "Masáž obličeje",
+   [
+    "žena",
+    "relax",
+    "uvnitř"
+   ],
+   "Beautician applying a facial massage with a jade roller to a relaxed woman lying on a treatment bed, towel up to the collarbone"
+  ],
+  [
+   "masaze",
+   "Masáž obličeje",
+   [
+    "žena",
+    "relax",
+    "uvnitř"
+   ],
+   "Gentle facial massage in a calm cosmetic studio, woman with closed eyes, therapist's hands on her forehead"
+  ],
+  [
+   "masaze",
+   "Lávové kameny",
+   [
+    "relax",
+    "uvnitř"
+   ],
+   "Therapist taking warm basalt stones from a heater in a calm spa room, candles, towels, no client visible"
+  ],
+  [
+   "masaze",
+   "Masážní salon",
+   [
+    "uvnitř"
+   ],
+   "Massage therapist in uniform welcoming a male client into a calm treatment room with a prepared massage table"
+  ],
+  [
+   "detska-hriste",
+   "Herna",
+   [
+    "děti",
+    "rodina",
+    "uvnitř"
+   ],
+   "Father and toddler playing together in a soft play area of an indoor kids center, laughing"
+  ],
+  [
+   "detska-hriste",
+   "Herna",
+   [
+    "děti",
+    "uvnitř"
+   ],
+   "Kids playing in a giant ball pit with colorful balls in a modern indoor play center, wide shot"
+  ],
+  [
+   "virtualni-realita",
+   "Simulátor",
+   [
+    "uvnitř",
+    "akce"
+   ],
+   "Teenager in a plain VR headset riding a motion simulator chair in a VR arcade, excited, friends watching"
+  ],
+  [
+   "virtualni-realita",
+   "VR hra",
+   [
+    "rodina",
+    "děti",
+    "uvnitř"
+   ],
+   "Mother and daughter playing a VR game together in a family entertainment center, both in plain white headsets, laughing"
+  ],
+  [
+   "fitness-joga",
+   "Jóga",
+   [
+    "senioři",
+    "sport",
+    "uvnitř"
+   ],
+   "Senior yoga class in a bright studio, older men and women in a gentle stretch, smiling instructor"
+  ],
+  [
+   "raketove-sporty",
+   "Badminton",
+   [
+    "rodina",
+    "děti",
+    "venku",
+    "léto"
+   ],
+   "Father and daughter playing badminton in a garden, white shuttlecock visible in the air, summer evening"
+  ]
+ ]
+}
