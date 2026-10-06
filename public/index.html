@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Booqito fotobanka</title>
+<title>Fotobanka</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -132,10 +132,10 @@
 </style>
 </head>
 <body>
-<div class="mtop"><button id="menuBtn" aria-label="Menu">☰ Menu</button><b id="mTitle">Booqito fotobanka</b></div>
+<div class="mtop"><button id="menuBtn" aria-label="Menu">☰ Menu</button><b id="mTitle">Fotobanka</b></div>
 <div class="app">
   <aside>
-    <div class="brand"><i></i><div><b>Booqito fotobanka</b><small id="total">—</small></div></div>
+    <div class="brand"><i></i><div><b>Fotobanka</b><small id="total">—</small></div></div>
     <div class="search"><input id="filter" placeholder="Hledat kategorii nebo tag…" autocomplete="off"></div>
     <div class="seg"><button id="segCat" class="on">Kategorie</button><button id="segTag">Tagy</button></div>
     <div class="pane" id="paneCat"><nav id="nav"></nav></div>
@@ -296,7 +296,7 @@ function renderPickbar() {
   $('#pbZip').onclick = downloadZip
   $('#pbClear').onclick = () => { picked.clear(); savePicked(); renderSide(); render() }
 }
-// stažení vybraných fotek v plném rozlišení jako ZIP (kategorie/podkategorie/…) + kredity
+// stažení vybraných fotek v plném rozlišení jako ZIP (kategorie/podkategorie/…)
 let zipping = false
 const loadJSZip = () => window.JSZip ? Promise.resolve(window.JSZip) : new Promise((ok, err) => { const sc = document.createElement('script'); sc.src = 'https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js'; sc.onload = () => ok(window.JSZip); sc.onerror = () => err(new Error('Nepodařilo se načíst JSZip')); document.head.appendChild(sc) })
 const slugify = (t) => String(t).normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')
@@ -306,14 +306,13 @@ async function downloadZip() {
   zipping = true; const bar = $('#pickbar')
   const prog = (t) => { bar.innerHTML = `<b>Stahuji…</b><span class="prog">${t}</span>` }
   try {
-    const JSZip = await loadJSZip(); const zip = new JSZip(); const credits = [['soubor', 'zdroj', 'autor', 'licence', 'odkaz', 'tagy']]
+    const JSZip = await loadJSZip(); const zip = new JSZip()
     let done = 0, failed = 0, i = 0; prog(`0 / ${items.length}`)
     const worker = async () => { while (i < items.length) { const x = items[i++]
       const name = `${slugify(x.cat.name)}/${slugify(x.sub)}/${x.p.id}.jpg`
-      try { const r = await fetch(new URL(x.p.large, location.href)); if (!r.ok) throw 0; zip.file(name, await r.blob()); credits.push([name, x.p.source, x.p.photographer, x.p.license, x.p.page || '', (x.p.tags || []).join(' ')]) } catch { failed++ }
+      try { const r = await fetch(new URL(x.p.large, location.href)); if (!r.ok) throw 0; zip.file(name, await r.blob()) } catch { failed++ }
       prog(`${++done} / ${items.length}`) } }
     await Promise.all([worker(), worker(), worker(), worker()])
-    zip.file('kredity.tsv', credits.map((r) => r.map((v) => String(v ?? '').replace(/[\t\n]/g, ' ')).join('\t')).join('\n'))
     prog('balím ZIP…')
     const blob = await zip.generateAsync({ type: 'blob' })
     const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = `fotobanka-vyber-${items.length}.zip`; document.body.appendChild(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(a.href), 60000)
